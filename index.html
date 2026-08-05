@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas Algoritma Kelas X-9</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    color:#333;
+}
+.container{
+    max-width:900px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+h1,h2{
+    text-align:center;
+    color:#0077cc;
+}
+button{
+    background:#0077cc;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+input{
+    padding:8px;
+    width:120px;
+}
+.flow{
+    background:#f5f5f5;
+    padding:15px;
+    border-radius:10px;
+    font-family:monospace;
+}
+.result{
+    font-size:22px;
+    color:green;
+    font-weight:bold;
+}
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#666;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Tugas Algoritma Kelas X-9</h1>
+
+<p><b>Nama :</b> M. Wildan Al Farizi</p>
+<p><b>Kelas :</b> X-9</p>
+
+<h2>Pengertian Algoritma</h2>
+
+<p>
+Algoritma adalah langkah-langkah yang tersusun secara logis dan sistematis
+untuk menyelesaikan suatu masalah.
+</p>
+
+<h2>Contoh Algoritma</h2>
+
+<p>Menghitung Luas Lingkaran</p>
+
+<div class="flow">
+Mulai <br>
+↓ <br>
+Masukkan Jari-jari (r) <br>
+↓ <br>
+Hitung Luas = 3.14 × r × r <br>
+↓ <br>
+Tampilkan Hasil <br>
+↓ <br>
+Selesai
+</div>
+
+<h2>Pseudocode</h2>
+
+<pre>
+Mulai
+Input r
+phi = 3.14
+luas = phi × r × r
+Output luas
+Selesai
+</pre>
+
+<h2>Kalkulator Luas Lingkaran</h2>
+
+<input type="number" id="r" placeholder="Jari-jari">
+
+<button onclick="hitung()">Hitung</button>
+
+<p class="result" id="hasil"></p>
+
+<footer>
+© 2026 | Tugas Informatika Kelas X-9
+</footer>
+
+</div>
+
+<script>
+function hitung(){
+
+let r=document.getElementById("r").value;
+
+let luas=3.14*r*r;
+
+document.getElementById("hasil").innerHTML=
+"Luas Lingkaran = "+luas.toFixed(2)+" cm²";
+
+}
+</script>
+
+</body>
+</html>
