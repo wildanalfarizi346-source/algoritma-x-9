@@ -3,309 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tugas Algoritma Kelas X-9</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
+<title>Tugas Algoritma X-9</title>
 
-body{
-background:linear-gradient(135deg,#4facfe,#dbeafe);
-padding:20px;
-}
-
-.container{
-max-width:700px;
-margin:auto;
-background:#fff;
-border-radius:20px;
-padding:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
-
-h1{
-text-align:center;
-color:#0d6efd;
-margin-bottom:20px;
-}
-
-h2{
-color:#0d6efd;
-margin:25px 0 10px;
-}
-
-.card{
-background:#f5f7fb;
-padding:15px;
-border-radius:15px;
-margin-top:10px;
-line-height:1.8;
-}
-
-pre{
-white-space:pre-wrap;
-font-size:16px;
-font-family:Consolas;
-}
-
-input{
-width:100%;
-padding:15px;
-border:2px solid #0d6efd;
-border-radius:10px;
-font-size:18px;
-margin-top:15px;
-}
-
-button{
-width:100%;
-padding:15px;
-margin-top:15px;
-border:none;
-border-radius:10px;
-background:#0d6efd;
-color:white;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-background:#0056d6;
-transform:scale(1.02);
-}
-
-#hasil{
-margin-top:20px;
-padding:15px;
-background:#e9fff0;
-border-left:6px solid green;
-border-radius:10px;
-font-size:20px;
-font-weight:bold;
-color:green;
-display:none;
-}
-
-footer{
-margin-top:30px;
-text-align:center;
-color:#666;
-font-size:15px;
-}
-</style>
-
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<!-- LOGIN -->
+<div id="login">
 
-<h1>🧮 Tugas Algoritma Kelas X-9</h1>
+<h1>🔐 LOGIN SYSTEM</h1>
 
-<p><b>Nama :</b> Alif Febrian Syah</p>
-<p><b>Kelas :</b> X-9</p>
+<input
+type="text"
+id="nama"
+placeholder="Masukkan Nama">
 
-<h2>📖 Pengertian Algoritma</h2>
+<button onclick="masuk()">
 
-<div class="card">
-Algoritma adalah urutan langkah-langkah yang logis, sistematis, dan terstruktur untuk menyelesaikan suatu masalah sehingga menghasilkan solusi yang benar.
+MASUK
+
+</button>
+
 </div>
 
-<h2>📝 Contoh Algoritma</h2>
+<!-- LOADING -->
 
-<div class="card">
+<div id="loading" style="display:none;">
+
+<h2>Memverifikasi...</h2>
+
+<div class="loader"></div>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" style="display:none;">
+
+<header>
+
+<h1>
+📚 TUGAS ALGORITMA
+</h1>
+
+<p id="user"></p>
+
+</header>
+
+<section class="card">
+
+<h2>📖 Pengertian</h2>
+
+<p>
+
+Algoritma adalah urutan langkah-langkah logis untuk menyelesaikan suatu masalah.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>📊 Flowchart</h2>
+
 <pre>
+
 Mulai
-↓
-Masukkan Jari-jari (r)
-↓
-Hitung Luas = 3.14 × r × r
-↓
-Tampilkan Hasil
-↓
+ ↓
+Input Jari-jari
+ ↓
+Hitung Luas
+ ↓
+Tampilkan
+ ↓
 Selesai
+
 </pre>
-</div>
+
+</section>
+
+<section class="card">
 
 <h2>💻 Pseudocode</h2>
 
-<div class="card">
 <pre>
+
 Mulai
-
 Input r
-phi = 3.14
-luas = phi × r × r
-
+luas = 3.14*r*r
 Output luas
-
 Selesai
+
 </pre>
+
+</section>
+
+<section class="card">
+
+<h2>🧮 Kalkulator</h2>
+
+<input
+type="number"
+id="r"
+placeholder="Jari-jari">
+
+<button onclick="hitung()">
+
+Hitung
+
+</button>
+
+<h3 id="hasil"></h3>
+
+</section>
+
 </div>
 
-<h2>🧮 Kalkulator Luas Lingkaran</h2>
-
-<input type="number" id="r" placeholder="Masukkan Jari-jari">
-
-<button onclick="hitung()">Hitung Luas</button>
-
-<div id="hasil"></div>
-
-<footer>
-© 2026 | Dibuat oleh Alif Febrian Syah
-</footer>
-
-</div>
-
-<script>
-
-function hitung(){
-
-let r=document.getElementById("r").value;
-
-if(r==""){
-alert("Masukkan nilai jari-jari terlebih dahulu!");
-return;
-}
-
-let luas=3.14*r*r;
-
-let hasil=document.getElementById("hasil");
-
-hasil.style.display="block";
-
-hasil.innerHTML=
-"📏 Jari-jari = <b>"+r+" cm</b><br><br>"+
-"📐 Rumus = π × r²<br>"+
-"= 3.14 × "+r+" × "+r+"<br><br>"+
-"✅ Luas Lingkaran = <b>"+luas.toFixed(2)+" cm²</b>";
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
-</html><style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:"Segoe UI",sans-serif;
-}
-
-body{
-background:#0f1115;
-color:#fff;
-padding:20px;
-}
-
-.container{
-max-width:700px;
-margin:auto;
-background:#181b22;
-border-radius:30px;
-padding:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.45);
-}
-
-h1{
-font-size:34px;
-text-align:center;
-color:#4EA8FF;
-margin-bottom:25px;
-}
-
-h2{
-color:#4EA8FF;
-margin:25px 0 12px;
-font-size:25px;
-}
-
-p{
-color:#d9d9d9;
-line-height:1.8;
-font-size:17px;
-}
-
-.card{
-background:#242833;
-padding:18px;
-border-radius:22px;
-margin-top:12px;
-box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
-}
-
-pre{
-font-size:16px;
-color:white;
-line-height:1.8;
-white-space:pre-wrap;
-font-family:Consolas;
-}
-
-input{
-width:100%;
-padding:16px;
-margin-top:15px;
-background:#2b303d;
-border:none;
-border-radius:18px;
-color:white;
-font-size:18px;
-outline:none;
-}
-
-input::placeholder{
-color:#9da3af;
-}
-
-button{
-width:100%;
-padding:16px;
-margin-top:18px;
-border:none;
-border-radius:18px;
-background:#0A84FF;
-color:white;
-font-size:19px;
-font-weight:bold;
-cursor:pointer;
-transition:.25s;
-}
-
-button:hover{
-transform:scale(1.02);
-background:#2D9CFF;
-}
-
-button:active{
-transform:scale(.97);
-}
-
-#hasil{
-display:none;
-margin-top:20px;
-background:#163F2E;
-color:#54FF96;
-padding:18px;
-border-radius:18px;
-font-size:20px;
-font-weight:bold;
-text-align:center;
-}
-
-footer{
-margin-top:35px;
-text-align:center;
-color:#8e8e8e;
-font-size:15px;
-}
-
-</style>
+</html>
